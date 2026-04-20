@@ -62,7 +62,6 @@
 
   /* PAGES */
   .page { display: none; min-height: 100vh; padding-top: 64px; }
-  .page.active { display: block; }
 
   /* HERO */
   #home {
@@ -1401,59 +1400,38 @@
 </div>
 
 <script>
-  // --- Navigation: hash-based, works on file:// and GitHub Pages ---
+  // --- Navigation ---
+  var PAGES = ['home','portfolio','pricing','events','about','contact'];
+
   function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-    var el = document.getElementById(pageId);
-    if (el) el.classList.add('active');
-    document.querySelectorAll('.nav-btn').forEach(function(a) {
-      a.classList.toggle('active', a.getAttribute('data-page') === pageId);
+    if (PAGES.indexOf(pageId) === -1) pageId = 'home';
+    PAGES.forEach(function(id) {
+      document.getElementById(id).style.display = (id === pageId) ? 'block' : 'none';
     });
-    document.getElementById('navLinks').classList.remove('open');
+    document.querySelectorAll('.nav-btn').forEach(function(a) {
+      a.style.color = (a.getAttribute('data-page') === pageId) ? 'var(--terracotta)' : '';
+    });
+    try { document.getElementById('navLinks').classList.remove('open'); } catch(e){}
     window.scrollTo(0, 0);
-    if (pageId === 'about') loadAboutPhotos();
   }
 
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
 
-  // Handle hash-based navigation
-  function handleHash() {
-    var hash = window.location.hash.replace('#', '') || 'home';
-    var validPages = ['home','portfolio','pricing','events','about','contact'];
-    if (validPages.indexOf(hash) === -1) hash = 'home';
-    showPage(hash);
-  }
-
-  // Nav links use href="#pageId" — intercept clicks for smooth behavior
-  document.querySelectorAll('.nav-btn').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      var page = this.getAttribute('href').replace('#','') || this.getAttribute('data-page');
-      history.pushState(null, '', '#' + page);
-      showPage(page);
-    });
-  });
-
-  // Also intercept any other internal page links
+  // Wire up every internal nav link
   document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-    var hash = link.getAttribute('href').replace('#','');
-    var validPages = ['home','portfolio','pricing','events','about','contact'];
-    if (validPages.indexOf(hash) !== -1) {
+    var target = link.getAttribute('href').replace('#', '');
+    if (PAGES.indexOf(target) !== -1) {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        history.pushState(null, '', '#' + hash);
-        showPage(hash);
+        showPage(target);
       });
     }
   });
 
-  // Handle browser back/forward
-  window.addEventListener('popstate', handleHash);
-
-  // Init on load
-  handleHash();
+  // Show home on load
+  showPage('home');
 
   // --- Portfolio / Photo Upload ---
   const defaultPhotos = ['images/evie_henna.png', 'images/Benny_henna.png', 'images/Weston_tiger.png'];
