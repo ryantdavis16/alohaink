@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlohaInk by Addy Davis — Henna Tattoos in Marin County</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Aloha<em>Ink</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="about.html">About Addy</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero" style="position:relative; overflow:hidden;">
+
+  <!-- Hibiscus SVG tile pattern background -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="hibiscus-pattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+        <!-- Hibiscus flower centered at 60,60 -->
+        <g transform="translate(60,60)" opacity="0.12">
+          <!-- 5 petals via rotation -->
+          <g>
+            <ellipse cx="0" cy="-22" rx="7" ry="16" fill="#C4673A" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-22" rx="7" ry="16" fill="#C4673A" transform="rotate(72)"/>
+            <ellipse cx="0" cy="-22" rx="7" ry="16" fill="#C4673A" transform="rotate(144)"/>
+            <ellipse cx="0" cy="-22" rx="7" ry="16" fill="#C4673A" transform="rotate(216)"/>
+            <ellipse cx="0" cy="-22" rx="7" ry="16" fill="#C4673A" transform="rotate(288)"/>
+          </g>
+          <!-- Inner petal details -->
+          <g>
+            <ellipse cx="0" cy="-18" rx="3" ry="10" fill="#8B3E1E" opacity="0.5" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-18" rx="3" ry="10" fill="#8B3E1E" opacity="0.5" transform="rotate(72)"/>
+            <ellipse cx="0" cy="-18" rx="3" ry="10" fill="#8B3E1E" opacity="0.5" transform="rotate(144)"/>
+            <ellipse cx="0" cy="-18" rx="3" ry="10" fill="#8B3E1E" opacity="0.5" transform="rotate(216)"/>
+            <ellipse cx="0" cy="-18" rx="3" ry="10" fill="#8B3E1E" opacity="0.5" transform="rotate(288)"/>
+          </g>
+          <!-- Stamen -->
+          <circle cx="0" cy="0" r="5" fill="#D4922A"/>
+          <circle cx="0" cy="0" r="2.5" fill="#8B3E1E"/>
+          <!-- Stamen dots -->
+          <circle cx="0" cy="-7" r="1.2" fill="#D4922A"/>
+          <circle cx="0" cy="-7" r="1.2" fill="#D4922A" transform="rotate(60)"/>
+          <circle cx="0" cy="-7" r="1.2" fill="#D4922A" transform="rotate(120)"/>
+          <circle cx="0" cy="-7" r="1.2" fill="#D4922A" transform="rotate(180)"/>
+          <circle cx="0" cy="-7" r="1.2" fill="#D4922A" transform="rotate(240)"/>
+          <circle cx="0" cy="-7" r="1.2" fill="#D4922A" transform="rotate(300)"/>
+        </g>
+        <!-- Small leaf accent top-left -->
+        <g transform="translate(15,15)" opacity="0.08">
+          <ellipse cx="0" cy="0" rx="5" ry="9" fill="#8B3E1E" transform="rotate(-30)"/>
+        </g>
+        <!-- Small leaf accent bottom-right -->
+        <g transform="translate(105,105)" opacity="0.08">
+          <ellipse cx="0" cy="0" rx="5" ry="9" fill="#8B3E1E" transform="rotate(-30)"/>
+        </g>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#hibiscus-pattern)"/>
+  </svg>
+
+  <!-- Hero content sits on top -->
+  <div style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center;">
+    <h1 class="hero-title">Aloha<em>Ink</em></h1>
+    <p class="hero-subtitle">Beautiful henna tattoos by Addy Davis</p>
+    <div class="hero-badge">🌺 Henna Artistry · Marin County, CA</div>
+    <br><br>
+    <div class="hero-cta">
+      <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+      <a href="contact.html" class="btn btn-secondary">Book Addy</a>
+    </div>
+  </div>
+</div>
+
+<div class="feature-strip">
+  <div class="feature-item">
+    <span class="feature-icon">🎨</span>
+    <div class="feature-title">Custom Designs</div>
+    <p class="feature-text">Every piece is hand-drawn and unique — from delicate florals to bold geometric patterns.</p>
+  </div>
+  <div class="feature-item">
+    <span class="feature-icon">🌿</span>
+    <div class="feature-title">Natural & Safe</div>
+    <p class="feature-text">Only 100% natural henna paste — safe for all skin types, including kids.</p>
+  </div>
+  <div class="feature-item">
+    <span class="feature-icon">🎉</span>
+    <div class="feature-title">Party Packages</div>
+    <p class="feature-text">Birthday parties, festivals, and events — bring the fun of henna to your celebration!</p>
+  </div>
+</div>
+
+<div class="teaser">
+  <div class="teaser-text">
+    <h2>Art that <em>tells</em> your story</h2>
+    <p>Whether you're celebrating a birthday, attending a festival, or simply treating yourself — AlohaInk brings the ancient art of henna to life with a fresh, youthful touch.</p>
+    <p>Based in Marin County, Addy brings her passion for intricate designs and natural beauty right to your event.</p>
+    <a href="portfolio.html" class="btn btn-primary">See Her Work</a>
+  </div>
+  <div class="teaser-gallery">
+    <img src="images/evie_henna.png" alt="Dalmatian puppy henna tattoo">
+    <img src="images/Benny_henna.png" alt="Number 3 henna tattoo">
+    <img src="images/Weston_tiger.png" alt="Tiger henna tattoo">
+  </div>
+</div>
+
+<div style="background:var(--warm-white); padding:4rem 2rem; text-align:center;">
+  <div class="section-header">
+    <span class="section-label">Ready to book?</span>
+    <h2 class="section-title">Let's create something beautiful</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Available weekends in Marin County. Reach out to check availability!</p>
+  </div>
+  <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Aloha<em>Ink</em> by Addy Davis</div>
+  <div class="footer-tagline">Beautiful henna tattoos by Addy Davis · Marin County, CA</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About Addy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 AlohaInk by Addy Davis · All rights reserved</div>
+</footer>
+
+</body>
+</html>
